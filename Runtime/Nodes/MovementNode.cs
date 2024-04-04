@@ -33,11 +33,7 @@ namespace MBT
         }
         public override NodeResult Execute()
         {
-            if (!navMeshAgent.isStopped) return NodeResult.running;
-            else if (
-                navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid
-                ||
-                navMeshAgent.pathStatus == NavMeshPathStatus.PathPartial) return NodeResult.failure;
+            if (navMeshAgent.velocity.magnitude > 0) return NodeResult.running;
             return NodeResult.success;
         }
     }
