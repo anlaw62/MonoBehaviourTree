@@ -9,7 +9,7 @@ namespace MBT
     [MBTNode(name = "Tasks/MoveTo")]
     public class MovementNode : Leaf
     {
-        [SerializeField] private Vector3Reference position;
+        [SerializeField] private Vector3Reference position = new(VarRefMode.DisableConstant);
         [SerializeField] private bool ObserveVariable;
         private void Start()
         {
