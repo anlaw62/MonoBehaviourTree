@@ -1,3 +1,14 @@
-﻿{
-	"name": "Qriva.MonoBehaviourTree.Runtime"
+{
+    "name": "Qriva.MonoBehaviourTree.Runtime",
+    "rootNamespace": "MBT",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
