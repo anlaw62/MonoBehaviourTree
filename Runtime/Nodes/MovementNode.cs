@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 namespace MBT
 {
+    [AddComponentMenu("")]
+    //
+    [MBTNode(name = "Tasks/MoveTo")]
     public class MovementNode : Leaf
     {
         [SerializeField] private Vector3Variable position;
