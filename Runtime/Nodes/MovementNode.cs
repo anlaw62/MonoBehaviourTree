@@ -27,13 +27,17 @@ namespace MBT
                 });
             }
         }
-        public override void OnEnter()
+        public override void OnAllowInterrupt()
         {
             navMeshAgent.SetDestination(position.Value);
         }
+        public override void OnEnter()
+        {
+          
+        }
         public override NodeResult Execute()
         {
-            if (navMeshAgent.velocity.magnitude > 0) return NodeResult.running;
+            if (navMeshAgent.isPathStale) return NodeResult.running;
             return NodeResult.success;
         }
     }
