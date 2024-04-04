@@ -37,7 +37,7 @@ namespace MBT
         }
         public override NodeResult Execute()
         {
-            if (navMeshAgent.isPathStale) return NodeResult.running;
+            if (navMeshAgent.velocity.magnitude > 0) return NodeResult.running;
             return NodeResult.success;
         }
     }
