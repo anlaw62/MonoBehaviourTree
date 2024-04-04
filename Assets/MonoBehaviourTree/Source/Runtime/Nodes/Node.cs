@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace MBT
 { 
@@ -20,6 +21,7 @@ namespace MBT
         public Status status = Status.Ready;
         [HideInInspector]
         public MonoBehaviourTree behaviourTree;
+        protected NavMeshAgent navMeshAgent => behaviourTree.NavMeshAgent;
         // [HideInInspector]
         public NodeResult runningNodeResult { get; internal set;}
         [HideInInspector]

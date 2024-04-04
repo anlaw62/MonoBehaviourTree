@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Unity.Profiling;
+using UnityEngine.AI;
 
 namespace MBT
 {
-    [DisallowMultipleComponent]
+    [DisallowMultipleComponent,RequireComponent(typeof(NavMeshAgent))]
     // [RequireComponent(typeof(Blackboard))]
     public class MonoBehaviourTree : MonoBehaviour
     {
@@ -15,6 +16,7 @@ namespace MBT
 
         [HideInInspector]
         public Node selectedEditorNode;
+        public NavMeshAgent NavMeshAgent { private set; get; }
         public bool repeatOnFinish = false;
         public int maxExecutionsPerTick = 1000;
         public MonoBehaviourTree parent;
@@ -32,6 +34,7 @@ namespace MBT
 
         void Awake()
         {
+            NavMeshAgent = GetComponent<NavMeshAgent>();    
             rootNode = GetComponent<Root>();
             if (rootNode == null) {
                 Debug.LogWarning("Missing Root node in behaviour tree.", this);
