@@ -128,7 +128,7 @@ namespace MBT
         None, Self, LowerPriority, Both
     }
 
-    public class NodeResult
+    public struct NodeResult
     {
         public Status status {get; private set;}
         public Node child {get; private set;}
