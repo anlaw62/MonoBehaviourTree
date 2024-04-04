@@ -9,13 +9,13 @@ namespace MBT
     [MBTNode(name = "Tasks/MoveTo")]
     public class MovementNode : Leaf
     {
-        [SerializeField] private Vector3Variable position;
+        [SerializeField] private Vector3Reference position;
         [SerializeField] private bool ObserveVariable;
         private void Start()
         {
             if (ObserveVariable)
             {
-                position.AddListener((oldVal, newVal) =>
+                position.GetVariable().AddListener((oldVal, newVal) =>
                 {
                     if (runningNodeResult.status == Status.Running)
                     {
